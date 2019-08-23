@@ -2,7 +2,9 @@
 # coding=utf-8
 
 import io
-import werobot
+import sys
+
+import workwerobot
 
 from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
@@ -25,19 +27,19 @@ class PyTest(TestCommand):
         sys.exit(errno)
 
 
-with io.open("README.rst", encoding="utf8") as f:
+with io.open("README.md", encoding="utf8") as f:
     readme = f.read()
-readme = readme.replace("latest", "v" + werobot.__version__)
+readme = readme.replace("latest", "v" + workwerobot.__version__)
 
 install_requires = open("requirements.txt").readlines()
 setup(
-    name='WeRoBot',
-    version=werobot.__version__,
-    author=werobot.__author__,
-    author_email='whtsky@me.com',
-    url='https://github.com/whtsky/WeRoBot',
+    name='WorkWeRoBot',
+    version=workwerobot.__version__,
+    author=workwerobot.__author__,
+    author_email='2504454577@qq.com',
+    url='https://github.com/pppwaw/WorkWeRoBot',
     packages=find_packages(),
-    keywords="wechat weixin werobot",
+    keywords="workwechat workweixin workwerobot",
     description='WeRoBot: writing WeChat Offical Account Robots with fun',
     long_description=readme,
     install_requires=install_requires,
@@ -49,8 +51,6 @@ setup(
         'Operating System :: MacOS',
         'Operating System :: POSIX',
         'Operating System :: POSIX :: Linux',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
@@ -65,5 +65,5 @@ setup(
     tests_require=['pytest'],
     cmdclass={"pytest": PyTest},
     extras_require={'crypto': ["cryptography"]},
-    package_data={'werobot': ['contrib/*.html']}
+    package_data={'workwerobot': ['contrib/*.html']}
 )

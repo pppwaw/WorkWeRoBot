@@ -1,4 +1,6 @@
-bottle
-requests
-six
+setuptools
 xmltodict
+requests
+cryptography
+six
+bottle

@@ -1,4 +1,4 @@
-*.py[cod]
+
 .python-version
 
 # C extensions
@@ -52,6 +52,7 @@ docs/_
 .Python
 include/
 Scripts/
+test/
 pyvenv.cfg
 
 werobot_session.db
