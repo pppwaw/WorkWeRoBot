@@ -1,4 +1,4 @@
-__version__ = '1.9.0'
+__version__ = '1.9.2'
 __author__ = 'pppwaw'
 __license__ = 'MIT'
 
