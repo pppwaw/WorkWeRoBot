@@ -31,6 +31,7 @@ class Client(object):
 
     def __init__(self, config):
         self.config = config
+        self.config["AGENT_ID"]=str(self.config["AGENT_ID"])
         self._token = None
         self.token_expires_at = None
 
@@ -306,7 +307,7 @@ class Client(object):
             }
         )
 
-    def send_text_message(self, content, user_id=None):
+    def send_text_message(self, content, user_id="@all"):
         """
         发送文本消息。
 
@@ -328,7 +329,7 @@ class Client(object):
             data=data
         )
 
-    def send_image_message(self, media_id, user_id=None):
+    def send_image_message(self, media_id, user_id="@all"):
         """
         发送图片消息。
 
@@ -350,7 +351,7 @@ class Client(object):
             data=data
         )
 
-    def send_voice_message(self, media_id, user_id=None):
+    def send_voice_message(self, media_id, user_id="@all"):
         """
         发送语音消息。
 
@@ -373,7 +374,7 @@ class Client(object):
         )
 
     def send_video_message(
-        self, media_id, title=None, description=None, user_id=None
+        self, media_id, title=None, description=None, user_id="@all"
     ):
         """
         发送视频消息。
@@ -399,8 +400,8 @@ class Client(object):
 
     def send_file_message(
         self,
-        user_id,
-        media_id
+        media_id,
+        user_id="@all"
     ):
         """
         发送音乐消息。
@@ -421,7 +422,7 @@ class Client(object):
             data=data
         )
 
-    def send_article_message(self, articles, user_id=None):
+    def send_article_message(self, articles, user_id="@all"):
         """
         发送图文消息::
 
@@ -468,7 +469,7 @@ class Client(object):
             data=data
         )
 
-    def send_markdown_message(self, text, user_id=None):
+    def send_markdown_message(self, text, user_id="@all"):
         """
         发送markdown消息。
 
